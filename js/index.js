@@ -50,8 +50,7 @@ link.forEach( (e, i) => {
 
 //update h1
 let h1 = document.querySelector(".cta-text h1");
-h1.textContent = siteContent.cta["h1"];
-
+h1.innerHTML = "DOM<br>Is<br>Awesome"
 //update bordered button text (Get Started)
 let button = document.querySelector(".cta-text button");
 button.textContent = siteContent.cta["button"]
