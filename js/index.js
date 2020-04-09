@@ -46,7 +46,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let link = document.querySelectorAll("nav a");
 link.forEach( (e, i) => {
   e.textContent = siteContent.nav[`nav-item-${i + 1}`];
+  e.style.color = "green"
 })
+
 
 //update h1
 let h1 = document.querySelector(".cta-text h1");
