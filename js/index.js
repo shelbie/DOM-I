@@ -42,13 +42,29 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
+let nav = document.querySelector("nav");
+
 //Update links
 let link = document.querySelectorAll("nav a");
 link.forEach( (e, i) => {
   e.textContent = siteContent.nav[`nav-item-${i + 1}`];
   e.style.color = "green"
+  
 })
 
+//add anchors with AppendChild on nav
+// let nav = document.querySelector("nav");
+let blog = document.createElement("a");
+blog.textContent = "Blog";
+blog.style.color = "green";
+
+let faq = document.createElement("a");
+faq.textContent = "FAQ"
+faq.style.color = "green";
+
+
+nav.prepend(blog);
+nav.appendChild(faq);
 
 //update h1
 let h1 = document.querySelector(".cta-text h1");
