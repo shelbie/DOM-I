@@ -40,3 +40,80 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+let nav = document.querySelector("nav");
+
+//Update links
+let link = document.querySelectorAll("nav a");
+link.forEach( (e, i) => {
+  e.textContent = siteContent.nav[`nav-item-${i + 1}`];
+  e.style.color = "green"
+  
+})
+
+//add anchors with AppendChild on nav
+// let nav = document.querySelector("nav");
+let blog = document.createElement("a");
+blog.textContent = "Blog";
+blog.style.color = "green";
+
+let faq = document.createElement("a");
+faq.textContent = "FAQ"
+faq.style.color = "green";
+
+
+nav.prepend(blog);
+nav.appendChild(faq);
+
+//update h1
+let h1 = document.querySelector(".cta-text h1");
+h1.innerHTML = "DOM<br>Is<br>Awesome"
+//update bordered button text (Get Started)
+let button = document.querySelector(".cta-text button");
+button.textContent = siteContent.cta["button"]
+
+//update code snippet photo (round image)
+let headerImg = document.querySelector("#cta-img");
+headerImg.setAttribute("src", siteContent["cta"]["img-src"])
+
+//update h4 headers in main-content
+let h4 = document.getElementsByClassName("text-content");
+// let i = 0; i < h4.length; i++;
+h4.textContent = siteContent["main-content"]
+h4[0].querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
+h4[1].querySelector('h4').textContent = siteContent["main-content"]["about-h4"];
+h4[2].querySelector('h4').textContent = siteContent["main-content"]["services-h4"];
+h4[3].querySelector('h4').textContent = siteContent["main-content"]["product-h4"];
+h4[4].querySelector('h4').textContent = siteContent["main-content"]["vision-h4"];
+
+
+// h4.forEach( (el, index) => {
+//   el.textContent = siteContent.mainContent.length;
+// })
+
+//update section paragraphs
+let p = document.getElementsByClassName('text-content');
+p[0].querySelector('p').textContent = siteContent["main-content"]["features-content"]
+p[1].querySelector('p').textContent = siteContent["main-content"]["about-content"]
+p[2].querySelector('p').textContent = siteContent["main-content"]["services-content"]
+p[3].querySelector('p').textContent = siteContent["main-content"]["product-content"]
+p[4].querySelector('p').textContent = siteContent["main-content"]["vision-content"]
+
+
+//update middle image
+let middleImg = document.querySelector("#middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+//update contact
+let contact = document.getElementsByClassName('contact');
+contact[0].querySelector('h4').textContent = siteContent["contact"]["contact-h4"];
+contact[0].querySelectorAll('p')[0].innerHTML = "123 Way 456 Street<br>Somewhere, USA";
+contact[0].querySelectorAll('p')[1].textContent = siteContent["contact"]["phone"];
+contact[0].querySelectorAll('p')[2].textContent = siteContent["contact"]["email"];
+
+
+//update footer
+let footer = document.querySelector("footer");
+footer.textContent = siteContent.footer["copyright"]
